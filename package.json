@@ -1,0 +1,27 @@
+{
+  "name": "server-games-for-sales",
+  "version": "0.1.0",
+  "description": "Server Games for Sales ",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GianniCimmino/Capstone-Project-server.git"
+  },
+  "author": "gianni-cimmino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GianniCimmino/Capstone-Project-server/issues"
+  },
+  "homepage": "https://github.com/GianniCimmino/Capstone-Project-server#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
