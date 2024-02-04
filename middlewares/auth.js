@@ -2,7 +2,6 @@ const jwt = require("jsonwebtoken");
 
 const verifyTokenAndRoles = (requiredRoles = []) => {
   return (req, res, next) => {
-    console.log("ciao");
     const token = req.headers["authorization"];
     if (!token)
       return res
