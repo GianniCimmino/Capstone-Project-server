@@ -9,6 +9,19 @@ router.get("/", async (req, res) => {
   res.json(products);
 });
 
+router.get("/product/:productId"),
+  (req, res) => {
+    const gameDetails = {
+      name: "",
+      category: "",
+      description: "",
+      price: "",
+      imageUrl: "",
+    };
+
+    res.json(gameDetails);
+  };
+
 // Aggiungi un prodotto
 router.post(
   "/",
