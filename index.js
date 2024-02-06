@@ -8,10 +8,13 @@ const reviewRoutes = require("./routes/reviews.js");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const ORIGINS = ["http://localhost:5000"];
 
 const corsOptions = {
-  origin: ["http://localhost:5000", "http://localhost:5001"],
+  origin: [
+    "http://localhost:5000",
+    "http://localhost:5001",
+    "http://localhost:3000",
+  ],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true, // Abilita l'invio dei cookie nelle richieste CORS
   optionsSuccessStatus: 204,
@@ -19,8 +22,8 @@ const corsOptions = {
 
 mongoose
   .connect(process.env.MONGODB_URI)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.error("Could not connect to MongoDB", err));
+  .then(() => console.log("Connesso a MongoDB"))
+  .catch((err) => console.error("Impossibile connettersi a MongoDB", err));
 
 app.use(express.json());
 app.use(cors(corsOptions));
@@ -34,5 +37,5 @@ app.use("/api/community", reviewRoutes);
 app.use("/api/auth", authRoutes);
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Il server è in esecuzione sulla porta: ${PORT}`);
 });
