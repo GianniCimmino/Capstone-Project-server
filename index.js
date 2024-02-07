@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const productRoutes = require("./routes/products.js");
+const productsRoutes = require("./routes/products.js");
 const authRoutes = require("./routes/auth.js");
 const reviewRoutes = require("./routes/reviews.js");
 
@@ -32,7 +32,7 @@ app.get("/", (req, res) => {
   res.json("<h1>Server in funzione</h1>");
 });
 
-app.use("/api/products", productRoutes);
+app.use("/api/products", productsRoutes);
 app.use("/api/community", reviewRoutes);
 app.use("/api/auth", authRoutes);
 

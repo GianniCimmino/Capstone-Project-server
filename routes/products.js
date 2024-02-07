@@ -5,22 +5,19 @@ const router = express.Router();
 
 // Ottieni tutti i prodotti
 router.get("/", async (req, res) => {
-  const products = await Product.find();
-  res.json(products);
+  const product = await Product.find();
+  res.json(product);
 });
 
-router.get("/product/:productId"),
-  (req, res) => {
-    const gameDetails = {
-      name: "",
-      category: "",
-      description: "",
-      price: "",
-      imageUrl: "",
-    };
-
-    res.json(gameDetails);
-  };
+router.get("/product/:productId", async (req, res) => {
+  const product = (await Product.find()).find(
+    (product) => product._id == req.params["productId"]
+  );
+  // const product = products.find(
+  //   (product) => product._id == "65c0e8c9cfd53d1d154659d4"
+  // );
+  res.json(product);
+});
 
 // Aggiungi un prodotto
 router.post(
