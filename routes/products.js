@@ -16,6 +16,16 @@ router.get("/product/:productId", async (req, res) => {
   res.json(product);
 });
 
+router.get("/product/filter/:titleFilter", async (req, res) => {
+  const product = (await Product.find()).filter((product) =>
+    product.title
+      .toLowerCase()
+      .match(req.params["titleFilter"].trim().toLowerCase())
+  );
+  console.log(product);
+  res.json(product);
+});
+
 // Aggiungi un prodotto
 router.post(
   "/",
