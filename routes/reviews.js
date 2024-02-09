@@ -4,6 +4,15 @@ const Review = require("../models/review"); // Assicurati di creare il modello R
 const tokenValidator = require("../middlewares/auth");
 const router = express.Router();
 
+router.get("/review", async (req, res) => {
+  try {
+    const reviews = await Review.find();
+    res.json(reviews);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // Ottieni tutte le recensioni di un prodotto
 router.get("/:productId/reviews", async (req, res) => {
   try {

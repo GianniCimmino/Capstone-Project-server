@@ -13,9 +13,6 @@ router.get("/product/:productId", async (req, res) => {
   const product = (await Product.find()).find(
     (product) => product._id == req.params["productId"]
   );
-  // const product = products.find(
-  //   (product) => product._id == "65c0e8c9cfd53d1d154659d4"
-  // );
   res.json(product);
 });
 

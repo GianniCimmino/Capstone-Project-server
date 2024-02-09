@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/products", productsRoutes);
-app.use("/api/community", reviewRoutes);
+app.use("/api/reviews", reviewRoutes);
 app.use("/api/auth", authRoutes);
 
 app.listen(PORT, () => {
